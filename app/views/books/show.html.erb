@@ -1,0 +1,26 @@
+<div class="">
+  <h2>Book detail</h2>
+  <%= form_with model: @book, url: '/books', method: :post do |f| %>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>
+          user
+        </td>
+        <td>
+          <%= f.text_field :book_title %>
+        </td>
+        <td>
+          <%= f.text_field :book_body %>
+        </td>
+        <td>
+          edit
+        </td>
+        <td>
+          destroy
+        </td>
+      </tr>
+    </tbody>
+  <% end %>
+  </table>
+</div>
