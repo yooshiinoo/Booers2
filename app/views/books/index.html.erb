@@ -27,7 +27,7 @@
       </div>
       <div class="form-group">
         <lebel for="book_opinion">Opinion</lebel>
-        <%= f.text_area :book_body %>
+        <%= f.text_field :book_body %>
       </div>
       <div class="form-group">
         <%= f.submit 'Create Book' %>
@@ -44,10 +44,12 @@
                user
              </td>
              <td>
-                <%= f.text_field :book_title %>
+                <%= link_to book_path(@book.id) do %>
+                  <%= f.text_field :book_title %>
+                <% end %>
              </td>
              <td>
-                <%= f.text_field :book_body %>
+               <%= f.text_field :book_body %>
              </td>
             </tr>
         </tbody>
@@ -57,3 +59,8 @@
   </div>
 </div>
 
+<% @post_images.each do |post_image| %>
+<div>
+  <%= link_to post_image_path(post_image.id) do %>
+    <%= image_tag post_image.get_image %>
+  <% end %>
