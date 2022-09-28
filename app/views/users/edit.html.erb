@@ -1,2 +1,26 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+ <div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h2>User info</h2>
+      <%= form_with model: @user,method: :patch do |f| %>
+      <div class="form-group">
+        <lebel for="user_name">Name</lebel>
+        <%= f.text_field :user_name, autofocus: true, id:"user_name", placeholder:"user[name]"%>
+      </div>
+      <div class="form-group">
+        <lebel for="user_image">Image</lebel>
+        <%= f.text_field :user_image, placeholder: "image", accept: "image/*" %>
+      </div>
+      <div class="form-group">
+        <lebel for="user_introduction">Introduction</lebel>
+        <%= f.text_field :user_introduction %>
+      </div>
+      <div class="form-group">
+        <%= f.submit 'Update User' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

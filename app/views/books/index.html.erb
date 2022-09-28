@@ -1,4 +1,5 @@
-<div class="container">
+
+ <div class="container">
   <div class="row">
     <div class="col-md-3">
       <h2>User info</h2>
@@ -17,7 +18,7 @@
         </tbody>
       </table>
       <div class="row">
-        <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+        <p><%= link_to "", edit_user_path(@user) %></p>
       </div>
       <h2 class="mt-3">New book</h2>
       <%= form_with model: @book, url: '/books', method: :post do |f| %>
@@ -42,6 +43,7 @@
             <tr>
              <td>
                user
+               <%= image_tag user_image.user.get_profile_image(100,100) %>
              </td>
              <td>
                 <%= link_to book_path(@book.id) do %>

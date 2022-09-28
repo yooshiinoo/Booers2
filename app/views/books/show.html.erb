@@ -5,8 +5,7 @@
     <tbody>
       <tr>
         <td>
-          <%= image_tag 'sample-author1.jpg' %>
-          <a><%= @book.user.name %></a>
+          <%= image_tag user_image.user.get_profile_image(100,100) %>
           <%= link_to "@book.user.name", user_path(@user) %>
         </td>
         <td>
