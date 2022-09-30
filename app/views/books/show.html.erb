@@ -1,3 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+      <%= render 'users/user', user: @user %>
+      <h2 class="mt-3">New book</h2>
+      <%= render 'books/book', book: @newbook %>
+    </div>
+    <div class="col-xs-9">
+      <h1>Book detail</h1>
+      <table class="table table-user-show">
+        <tr>
+          <td>
+            <%= attachment_imega_tag @user, :profile_imega, :fill, 30, 30, fallback: "no_imega.jpg" %>
+            <%= link_to @user.name, user_path(@user) %>
+          </td>
+          <td>
+            <%= @book.title %>
+          </td>
+          <td>
+            <%= @book.body %>
+          </td>
+          <% if @book.user_id == current_user.id %>
+            <td>
+              <%= link_to "Edit", edit_book_path(@book), class:"btn btn-success" %>
+            </td>
+            <td>
+              <%= link_to "Destroy", book_path(@book), method: :delete, data: {confirm: "本当に消しますか？"}, class:"btn btn-danger" %>
+            </td>
+          <% end %>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
 <div class="">
   <h2>Book detail</h2>
   <%= form_with model: @book, url: '/books', method: :post do |f| %>

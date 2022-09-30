@@ -1,0 +1,13 @@
+<%= form_for(book) do |f| %>
+  <div class="form-group">
+        <%= f.lebel :Title %>
+        <%= f.text_field :title, class: "col-xs-12" %>
+      </div>
+      <div class="form-group">
+        <%= f.lebel :Opinion %>
+        <%= f.text_field :body, class: "col-xs-12" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit class: "btn btn-primary col-xs-12" %>
+      </div>
+<% end %>

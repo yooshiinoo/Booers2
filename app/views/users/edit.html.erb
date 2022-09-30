@@ -3,7 +3,7 @@
     <div class="col-md-3">
       <h2>User info</h2>
       <%= form_for(@user) do |f| %>
-      
+      <%= render 'books/error', model: @user %>
       <div class="form-group">
         <lebel for="user_name">Name</lebel>
         <%= f.text_field :user_name, autofocus: true, id:"user_name", placeholder:"user[name]"%>
