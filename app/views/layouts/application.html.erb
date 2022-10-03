@@ -19,6 +19,27 @@
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
+               <li>
+                <%= link_to root_path, class:"btn btn-link" do %>
+                  <span class="glyphicon glyphicon-home" aria-hidden="true"> Home </span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to about_path, class:"btn btn-link" do %>
+                  <span class="glyphicon glyphicon-link" aria-hidden="true"> About </span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_user_registration_path, class:"btn btn-link" do %>
+                  <span class="glyphicon glyphicon-sign-up" aria-hidden="true"> Sign up</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_user_session_path, class:"btn btn-link" do %>
+                  <span class="glyphicon glyphicon-log-in" aria-hidden="true"> Log in </span>
+                <% end %>
+              </li>
+            <% else %>
               <li>
                 <%= link_to user_path(current_user), class:"btn btn-link" do %>
                   <span class="glyphicon glyphicon-home" aria-hidden="true"> Home </span>
@@ -37,27 +58,6 @@
               <li>
                 <%= link_to destroy_user_session_path, class:"btn btn-link" do %>
                   <span class="glyphicon glyphicon-log-out" aria-hidden="true"> Log out </span>
-                <% end %>
-              </li>
-            <% else %>
-              <li>
-                <%= link_to root_path, class:"btn btn-link" do %>
-                  <span class="glyphicon glyphicon-home" aria-hidden="true"> Home </span>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to about_path, class:"btn btn-link" do %>
-                  <span class="glyphicon glyphicon-link" aria-hidden="true"> About </span>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to new_user_registration_path, class:"btn btn-link" do %>
-                  <span class="glyphicon glyphicon-sign-up" aria-hidden="true"> Sign up</span>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to new_user_session_path, class:"btn btn-link" do %>
-                  <span class="glyphicon glyphicon-log-in" aria-hidden="true"> Log in </span>
                 <% end %>
               </li>
             <% end %>
