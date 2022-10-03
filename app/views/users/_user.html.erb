@@ -2,7 +2,7 @@
   <h2>User info</h2>
   <thead>
     <tr>
-      <%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
+      <%= image_tag @books.user.getprofile_image(100,100) %>
     </tr>
   </thead>
   <tbody>
