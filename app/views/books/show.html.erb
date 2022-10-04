@@ -10,7 +10,7 @@
       <table class="table table-user-show">
         <tr>
           <td>
-            <%= attachment_imega_tag @user, :profile_imega, :fill, 30, 30, fallback: "no_imega.jpg" %>
+            <%= image_tag @user.get_profile_image(100,100) %>
             <%= link_to @user.name, user_path(@user) %>
           </td>
           <td>
@@ -42,7 +42,7 @@
     <tbody>
       <tr>
         <td>
-          <%= image_tag user_image.user.get_profile_image(100,100) %>
+          <%= image_tag @user.get_profile_image(100,100) %>
           <%= link_to "@book.user.name", user_path(@user) %>
         </td>
         <td>

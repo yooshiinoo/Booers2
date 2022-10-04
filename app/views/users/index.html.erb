@@ -17,7 +17,7 @@
           <% @user.each do |user| %>
           <tr>
             <td>
-              <%= attachment_imega_tag @user, :profile_imega, :fill, 50, 50, fallback: "no_imega.jpg" %>
+              <%= image_tag @user.get_profile_image(100,100) %>
             </td>
             <td>
               <%= user.name %>
