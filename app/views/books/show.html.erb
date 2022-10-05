@@ -2,7 +2,33 @@
   <div class="row">
     <%= render 'books/error', book: @book %>
     <div class="col-xs-3">
-      <%= render 'users/user', user: @user %>
+      <table class="table table-user">
+        <h2>User info</h2>
+        <thead>
+          <tr>
+            <%= image_tag @book.user.get_profile_image(100,100) %>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>name</th>
+              <th><%= @book.user.name %></th>
+            </tr>
+            <tr>
+              <th>introduction</th>
+              <th><%= @book.user.introduction %></th>
+            </tr>
+            <tr>
+              <th>
+                <% if @book.user.id == current_user.id %>
+                  <%= link_to edit_user_path(current_user), class:"btn btn-default btn-block" do %>
+                    <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+                  <% end %>
+                <% end %>
+              </th>
+            </tr>
+         </tbody>
+      </table>
       <h2 class="mt-3">New book</h2>
       <%= render 'books/book', book: @newbook %>
     </div>

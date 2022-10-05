@@ -2,75 +2,94 @@
 <html>
   <head>
     <title>Bookers2</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/20c1341cb6.js" crossorigin="anonymous"></script>
   </head>
 
-  <body class="header">
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <nav class="nav navbar-left">
-          <span class="title">Bookers</span>
-        </nav>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
-              <li>
-                <%= link_to user_path(current_user), class:"btn btn-link" do %>
-                  <span class="glyphicon glyphicon-home" aria-hidden="true"> Home </span>
+  <body class="d-flex flex-column vh-100">
+    <header class="shadow-sm">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand">
+            <span>Bookers</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse show" id="navbarNavDropdown" style>
+            <ul class="navbar-nav ml-auto">
+                <% if user_signed_in? %>
+                  <li>
+                    <a class="nav-link text-light" href="/users/id">
+                        <i class="fa-solid fa-house"></i>
+                        Home
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-link text-light" href="/users">
+                        <i class="fa-solid fa-users"></i>
+                        Users
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-link text-light" href="/books">
+                       <i class="fa-solid fa-book-open"></i>
+                        Books
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-link text-light" href="/users/sign_out">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Log out
+                    </a>
+                  </li>
+                <% else %>
+                  <li>
+                    <a class="nav-link text-light" href="/">
+                        <i class="fa-solid fa-house"></i>
+                        Home
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-link text-light" href="/about">
+                        <i class="fa-solid fa-link"></i>
+                        About
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-link text-light" href="/users/sign_up">
+                        <i class="fa-solid fa-user-plus"></i>
+                        Sign up
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-link text-light" href="/users/sign_in">
+                      <i class="fa-solid fa-right-to-bracket"></i>
+                      Log in
+                    </a>
+                  </li>
                 <% end %>
-              </li>
-              <li>
-                <%= link_to users_path, class:"btn btn-link" do %>
-                  <span class="glyphicon glyphicon-user" aria-hidden="true"> Users </span>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to books_path, class:"btn btn-link" do %>
-                  <span class="glyphicon glyphicon-book" aria-hidden="true"> Books </span>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete, class:"btn btn-link" do %>
-                  <span class="glyphicon glyphicon-log-out" aria-hidden="true"> Log out </span>
-                <% end %>
-              </li>
-            <% else %>
-              <li>
-                <%= link_to root_path, class:"btn btn-link" do %>
-                  <span class="glyphicon glyphicon-home" aria-hidden="true"> Home </span>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to about_path, class:"btn btn-link" do %>
-                  <span class="glyphicon glyphicon-link" aria-hidden="true"> About </span>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to new_user_registration_path, class:"btn btn-link" do %>
-                  <span class="glyphicon glyphicon-sign-up" aria-hidden="true"> Sign up</span>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to new_user_session_path, class:"btn btn-link" do %>
-                  <span class="glyphicon glyphicon-log-in" aria-hidden="true"> Log in </span>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-        </nav>
-      </div>
+              </ul>
+          </div>
+        </div>
+      </nav>
     </header>
     <div class="body">
       <p class="notice"><%= notice %></p>
     <%= yield %>
     </div>
     <footer>
-      <p class="text-right"> CopyRight Infretop.inc </p>
+      <div class="row">
+        <div class="mx-auto">
+          <p>
+            CopyRight Infretop.inc
+          </p>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
