@@ -1,6 +1,6 @@
  <div class="container">
   <div class="row">
-    <%= render 'books/error', model: @book %>
+    <%= render 'books/error', book: @book %>
     <div class="col-xs-3">
       <%= render 'users/user', user: @user %>
       <h2 class="mt-3">New book</h2>
@@ -15,11 +15,11 @@
           <th>Opinion</th>
         </thead>
         <tbody>
-          <% @book.each do |book| %>
+          <% @books.each do |book| %>
             <tr>
               <td>
                 <%= link_to user_path(book.user) do %>
-                  <%= image_tag @user.get_profile_image(100,100) %>
+                  <%= image_tag book.user.get_profile_image(100,100) %>
                 <% end %>
               </td>
               <td>

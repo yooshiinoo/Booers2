@@ -35,7 +35,7 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to destroy_user_session_path, class:"btn btn-link" do %>
+                <%= link_to destroy_user_session_path, method: :delete, class:"btn btn-link" do %>
                   <span class="glyphicon glyphicon-log-out" aria-hidden="true"> Log out </span>
                 <% end %>
               </li>
