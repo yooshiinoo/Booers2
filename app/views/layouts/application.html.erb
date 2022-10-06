@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://kit.fontawesome.com/20c1341cb6.js" crossorigin="anonymous"></script>
     <title>Bookers2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://kit.fontawesome.com/20c1341cb6.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -55,7 +55,7 @@
                     <% end %>
                   </li>
                   <li>
-                    <%= link_to about_path, class: "nav-link text-light" do %>
+                    <%= link_to homes_about_path, class: "nav-link text-light" do %>
                       <i class="fa-solid fa-link"></i>
                       About
                     <% end %>
