@@ -20,6 +20,12 @@
         <i class="fa-solid fa-user-gear"></i>
       </span>
     <% end %>
+  <% else %>
+    <%= link_to user_path(current_user), class:"btn btn-outline-secondary btn-block" do %>
+      <span class="glyphicon glyphicon-wrench" aria-hidden="true">
+        <i class="fa-solid fa-user-gear"></i>
+      </span>
+    <% end %>
   <% end %>
 </div>
 
