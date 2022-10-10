@@ -1,4 +1,16 @@
 <p id="notice"></p>
+<% if @newbook.errors.any? %>
+  <div class="errors">
+    <p>
+      <%= @newbook.errors.count %>error prohibited this obj form being saved
+    </p>
+    <ul><% @newbook.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
